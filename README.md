@@ -1,20 +1,21 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Node Kickstart
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+### Repositório com o kickstart para projetos em NodeJs <br><br>
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+### Pré-requisitos <br>
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+Para fazer o uso desse kickstart você precisará ter em seu computador as seguintes ferramentas: <br>
+    > Git - https://git-scm.com/  <br>
+    > Docker - https://www.docker.com/  <br><br>
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+### Modo de usar
+``` bash
+# Clone o repositório
+$ git@ssh.dev.azure.com:v3/okndevelopers/okn-labs/node-kickstart
+
+# Execute o seguinte comando na raiz do seu projeto
+$ source init.sh
+
+# Abrirá um menu para onde será definido as configurações do projeto
+
+```
