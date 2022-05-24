@@ -82,3 +82,15 @@ Escolha o tipo de projeto:
 - NPM/Yarn;
 - Projeto vazio para iniciar como desejar;
 
+<br>
+
+### Instruções Docker
+
+``` bash
+# Para "subir" o docker execute o seguinte script:
+$ ./startDocker.sh
+
+# Para parar o docker execute o seguinte script:
+$ ./stopDocker.sh
+
+```
