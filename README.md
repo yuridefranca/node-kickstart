@@ -12,7 +12,7 @@ Para fazer o uso desse kickstart você precisará ter em seu computador as segui
 ### Modo de usar
 ``` bash
 # Clone o repositório
-$ git@ssh.dev.azure.com:v3/okndevelopers/okn-labs/node-kickstart
+$ git clone git@ssh.dev.azure.com:v3/okndevelopers/okn-labs/node-kickstart
 
 # Execute o seguinte comando na raiz do seu projeto
 $ source init.sh
