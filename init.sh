@@ -96,6 +96,8 @@ setUpProject() {
 
     git commit -m "Initial Commit"
 
+    git branch -m main
+
     code .
 }
 
