@@ -21,7 +21,7 @@ function initMenu() {
 function projectNameDialog() {
     PROJECT_NAME=$(                                                             \
                 dialog                                                          \
-                    --title "Project Name"                                      \
+                    --title "Nome do Projeto"                                   \
                     --inputbox "Digite o nome do Projeto:"                      \
                     8 50                                                        \
                     $PROJECT_NAME                                               \
@@ -35,12 +35,13 @@ function projectTypeDialog() {
                 --clear                                                         \
                 --title "Tipo do projeto:"                                      \
                 --menu "Escolha o tipo do projeto que você está iniciando"      \
-                8 50 10                                                         \
+                15 50 10                                                         \
                 1 "Nodejs"                                                      \
-                2 "Nodejs + Postgres"                                           \
+                2 "Nodejs + PostgreSQL"                                           \
                 3 "Nodejs + Typescript"                                         \
-                4 "Nodejs + Typescript + Postgres"                              \
-                5 "Nodejs + Typescript + Hubspot"                               \
+                4 "Nodejs + Typescript + PostgreSQL"                              \
+                5 "Nodejs + Typescript + HubSpot"                               \
+                6 "Nodejs From Scratch"                                         \
                 2>&1 >/dev/tty
     )
 
@@ -59,6 +60,9 @@ function projectTypeDialog() {
             ;;
         5) 
             PROJECT_BRANCH=feature/typescript-hubspot
+            ;;
+        6) 
+            PROJECT_BRANCH=feature/scratch
             ;;
     esac   
 }
