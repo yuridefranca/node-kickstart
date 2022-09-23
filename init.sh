@@ -35,34 +35,34 @@ function projectTypeDialog() {
                 --clear                                                         \
                 --title "Tipo do projeto:"                                      \
                 --menu "Escolha o tipo do projeto que você está iniciando"      \
-                15 50 10                                                         \
-                1 "Nodejs"                                                      \
-                2 "Nodejs + PostgreSQL"                                           \
-                3 "Nodejs + Typescript"                                         \
-                4 "Nodejs + Typescript + PostgreSQL"                              \
-                5 "Nodejs + Typescript + HubSpot"                               \
-                6 "Nodejs From Scratch"                                         \
+                15 50 10                                                        \
+                1 "Começar do 0"                                                \
+                2 "Projeto NodeJs + Typescript"                                 \
+                3 "Projeto NodeJs + Typescript + PostgreSql"                    \
+                4 "Projeto NodeJs + Typescript + MySql"                         \
+                5 "Nodejs + Typescript + HubSpot Api"                           \
+                6 "Nodejs + Typescript + HubSpot App"                           \
                 2>&1 >/dev/tty
     )
 
     case $PROJECT_TYPE in
         1) 
-            PROJECT_BRANCH=feature/nodejs
+            PROJECT_BRANCH=feature/from-scracth
             ;;
         2) 
-            PROJECT_BRANCH=feature/nodejs-postgres
-            ;;
-        3) 
             PROJECT_BRANCH=feature/typescript
             ;;
-        4) 
+        3) 
             PROJECT_BRANCH=feature/typescript-postgres
             ;;
+        4) 
+            PROJECT_BRANCH=feature/typescript-mysql
+            ;;
         5) 
-            PROJECT_BRANCH=feature/typescript-hubspot
+            PROJECT_BRANCH=feature/typescript-hubspot-api
             ;;
         6) 
-            PROJECT_BRANCH=feature/scratch
+            PROJECT_BRANCH=feature/typescript-hubspot-app
             ;;
     esac   
 }
@@ -82,10 +82,10 @@ setUpProject() {
 
     sed -i "s/PROJECT_NAME=.*/PROJECT_NAME=$PROJECT_NAME/g" $NEW_PATH/.env.example
     sed -i "s/POSTGRES_DB=.*/POSTGRES_DB=${PROJECT_NAME}_db/g" $NEW_PATH/.env.example
-    sed -i "s/POSTGRES_USER=.*/POSTGRES_USER=docker/g" $NEW_PATH/.env.example
     
     cp .env.example .env
     
+    sed -i "s/POSTGRES_USER=.*/POSTGRES_USER=docker/g" $NEW_PATH/.env.example
     sed -i "s/POSTGRES_PASSWORD=.*/POSTGRES_PASSWORD=$POSTGRES_PASSWORD/g" $NEW_PATH/.env
 
     cp www/.env.example www/.env
@@ -94,7 +94,7 @@ setUpProject() {
 
     git add .
 
-    git commit -m "Initial Commit"
+    git commit -m ":tada: Initial Commit"
 
     git branch -m main
 
