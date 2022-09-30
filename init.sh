@@ -81,16 +81,21 @@ setUpProject() {
     git init
 
     sed -i "s/PROJECT_NAME=.*/PROJECT_NAME=$PROJECT_NAME/g" $NEW_PATH/.env.example
-    sed -i "s/POSTGRES_DB=.*/POSTGRES_DB=${PROJECT_NAME}_db/g" $NEW_PATH/.env.example
+    sed -i "s/POSTGRES_DATABASE=.*/POSTGRES_DATABASE=${PROJECT_NAME}_db/g" $NEW_PATH/.env.example
+    sed -i "s/MYSQL_DATABASE=.*/MYSQL_DATABASE=${PROJECT_NAME}_db/g" $NEW_PATH/.env.example
     
     cp .env.example .env
-    
+    /
     sed -i "s/POSTGRES_USER=.*/POSTGRES_USER=docker/g" $NEW_PATH/.env.example
     sed -i "s/POSTGRES_PASSWORD=.*/POSTGRES_PASSWORD=$POSTGRES_PASSWORD/g" $NEW_PATH/.env
 
-    cp www/.env.example www/.env
+    sed -i "s/MYSQL_USER=.*/MYSQL_USER=docker/g" $NEW_PATH/.env.example
+    sed -i "s/MYSQL_PASSWORD=.*/MYSQL_PASSWORD=$POSTGRES_PASSWORD/g" $NEW_PATH/.env
+    sed -i "s/MYSQL_ROOT_PASSWORD=.*/MYSQL_ROOT_PASSWORD=$POSTGRES_PASSWORD/g" $NEW_PATH/.env
 
-    sed -i "s/\"name\":.*/\"name\": \"${PROJECT_NAME}\",/g" $NEW_PATH/www/package.json
+    cp code/.env.example code/.env
+
+    sed -i "s/\"name\":.*/\"name\": \"${PROJECT_NAME}\",/g" $NEW_PATH/code/package.json
 
     git add .
 
