@@ -35,13 +35,14 @@ function projectTypeDialog() {
                 --clear                                                         \
                 --title "Tipo do projeto:"                                      \
                 --menu "Escolha o tipo do projeto que você está iniciando"      \
-                15 50 10                                                        \
+                15 60 10                                                        \
                 1 "Começar do 0"                                                \
                 2 "Projeto NodeJs + Typescript"                                 \
                 3 "Projeto NodeJs + Typescript + PostgreSql"                    \
                 4 "Projeto NodeJs + Typescript + MySql"                         \
                 5 "Nodejs + Typescript + HubSpot Api"                           \
                 6 "Nodejs + Typescript + HubSpot App"                           \
+                7 "Nodejs + Typescript + HubSpot App (simplificado)"            \
                 2>&1 >/dev/tty
     )
 
@@ -63,6 +64,9 @@ function projectTypeDialog() {
             ;;
         6) 
             PROJECT_BRANCH=feature/typescript-hubspot-app
+            ;;
+        7) 
+            PROJECT_BRANCH=feature/typescript-hubspot-app-simplificado
             ;;
     esac   
 }
