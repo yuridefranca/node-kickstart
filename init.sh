@@ -78,6 +78,10 @@ setUpProject() {
     
     cd $NEW_PATH
 
+    git fetch
+
+    git pull origin $PROJECT_BRANCH
+
     git checkout -f $PROJECT_BRANCH
 
     rm -rf .git
