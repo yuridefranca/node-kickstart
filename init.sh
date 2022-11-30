@@ -48,7 +48,7 @@ function projectTypeDialog() {
 
     case $PROJECT_TYPE in
         1) 
-            PROJECT_BRANCH=feature/from-scracth
+            PROJECT_BRANCH=feature/scratch
             ;;
         2) 
             PROJECT_BRANCH=feature/typescript
@@ -117,6 +117,6 @@ setUpProject() {
 
 initMenu
 
-clear
+# clear
 
 cd $NEW_PATH
