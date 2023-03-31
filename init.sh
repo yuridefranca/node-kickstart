@@ -7,8 +7,8 @@ POSTGRES_PASSWORD=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 10 | head -n
 
 function initMenu() {
     if ! dpkg-query -W -f='${Status}' dialog | grep "ok installed"; then
-        AptUpdate
-        $SUDO apt-get install -y dialog
+        sudo apt-get update
+        sudo apt-get install -y dialog
     fi
 
     projectNameDialog
