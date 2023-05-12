@@ -12,13 +12,13 @@ Para fazer o uso desse kickstart você precisará ter em seu computador as segui
 ### Modo de usar
 ``` bash
 # Clone o repositório
-$ git clone git@ssh.dev.azure.com:v3/okndevelopers/okn-labs/node-kickstart
+$ git clone git@github.com:yuridefranca/node-kickstart.git
 
 # Entre no diretório do kickstart
 $ cd node-kickstart
 
 # Execute o seguinte comando
-$ source init.sh
+$ ./init.sh
 
 # Abrirá um menu para onde será definido as configurações do projeto
 
@@ -34,23 +34,6 @@ Escolha o tipo de projeto:
 
 ![Dialog Nome do Projeto](/images/dialog-tipo-do-projeto.png)
 
-#### **NodeJs** <br>
-- Docker;
-- NodeJs;
-- NPM/Yarn;
-- Arquitetura padrão com o express;
-
-<br>
-
-#### **NodeJs + PostgreSQL** <br>
-- Docker;
-- NodeJs;
-- PostgreSQL (orm prisma);
-- NPM/Yarn;
-- Arquitetura padrão com o express;
-
-<br>
-
 #### **NodeJs + Typescript** <br>
 - Docker;
 - NodeJs + Typescript;
@@ -59,24 +42,16 @@ Escolha o tipo de projeto:
 
 <br>
 
-#### **NodeJs + Typescript + PostgreSQL** <br>
+#### **NodeJs + Typescript + Mysql** <br>
 - Docker;
 - NodeJs + Typescript;
-- PostgreSQL (orm prisma);
+- Mysql;
 - NPM/Yarn;
 - Arquitetura padrão com o express;
 
 <br>
 
-#### **NodeJs + Typescript + HubSpot** <br>
-- Docker;
-- NodeJs + Typescript;
-- NPM/Yarn;
-- Arquitetura padrão com o express + service para api do hubspot;
-
-<br>
-
-#### **NodeJs From Scratch** <br>
+#### **NodeJs + Typescript From Scratch** <br>
 - Docker;
 - NodeJs;
 - NPM/Yarn;

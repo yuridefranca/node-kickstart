@@ -3,7 +3,7 @@
 CURRENT_PATH=$(pwd)
 PREVIOUS_PATH=$(dirname "$CURRENT_PATH")
 
-POSTGRES_PASSWORD=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 10 | head -n 1)
+PASSWORD=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 10 | head -n 1)
 
 function initMenu() {
     if ! dpkg-query -W -f='${Status}' dialog | grep "ok installed"; then
@@ -38,11 +38,7 @@ function projectTypeDialog() {
                 15 60 10                                                        \
                 1 "Começar do 0"                                                \
                 2 "Projeto NodeJs + Typescript"                                 \
-                3 "Projeto NodeJs + Typescript + PostgreSql"                    \
-                4 "Projeto NodeJs + Typescript + MySql"                         \
-                5 "Nodejs + Typescript + HubSpot Api"                           \
-                6 "Nodejs + Typescript + HubSpot App"                           \
-                7 "Nodejs + Typescript + HubSpot App (simplificado)"            \
+                3 "Projeto NodeJs + Typescript + Mysql"                         \
                 2>&1 >/dev/tty
     )
 
@@ -54,19 +50,7 @@ function projectTypeDialog() {
             PROJECT_BRANCH=feature/typescript
             ;;
         3) 
-            PROJECT_BRANCH=feature/typescript-postgres
-            ;;
-        4) 
             PROJECT_BRANCH=feature/typescript-mysql
-            ;;
-        5) 
-            PROJECT_BRANCH=feature/typescript-hubspot-api
-            ;;
-        6) 
-            PROJECT_BRANCH=feature/typescript-hubspot-app
-            ;;
-        7) 
-            PROJECT_BRANCH=feature/typescript-hubspot-app-simplificado
             ;;
     esac   
 }
@@ -88,18 +72,13 @@ setUpProject() {
 
     git init
 
-    sed -i "s/PROJECT_NAME=.*/PROJECT_NAME=$PROJECT_NAME/g" $NEW_PATH/.env.example
-    sed -i "s/POSTGRES_DATABASE=.*/POSTGRES_DATABASE=${PROJECT_NAME}_db/g" $NEW_PATH/.env.example
     sed -i "s/MYSQL_DATABASE=.*/MYSQL_DATABASE=${PROJECT_NAME}_db/g" $NEW_PATH/.env.example
     
     cp .env.example .env
-    /
-    sed -i "s/POSTGRES_USER=.*/POSTGRES_USER=docker/g" $NEW_PATH/.env.example
-    sed -i "s/POSTGRES_PASSWORD=.*/POSTGRES_PASSWORD=$POSTGRES_PASSWORD/g" $NEW_PATH/.env
 
     sed -i "s/MYSQL_USER=.*/MYSQL_USER=docker/g" $NEW_PATH/.env.example
-    sed -i "s/MYSQL_PASSWORD=.*/MYSQL_PASSWORD=$POSTGRES_PASSWORD/g" $NEW_PATH/.env
-    sed -i "s/MYSQL_ROOT_PASSWORD=.*/MYSQL_ROOT_PASSWORD=$POSTGRES_PASSWORD/g" $NEW_PATH/.env
+    sed -i "s/MYSQL_PASSWORD=.*/MYSQL_PASSWORD=$PASSWORD/g" $NEW_PATH/.env
+    sed -i "s/MYSQL_ROOT_PASSWORD=.*/MYSQL_ROOT_PASSWORD=$PASSWORD/g" $NEW_PATH/.env
 
     cp code/.env.example code/.env
 
