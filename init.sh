@@ -76,9 +76,12 @@ setUpProject() {
     
     sed -i "s/MYSQL_DATABASE=.*/MYSQL_DATABASE=${PROJECT_NAME}_db/g" $NEW_PATH/.env.example
     
+    sed -i "s/MYSQL_HOST=.*/MYSQL_HOST=database/g" $NEW_PATH/.env.example
+    sed -i "s/MYSQL_PORT=.*/MYSQL_PORT=3306/g" $NEW_PATH/.env.example
+    sed -i "s/MYSQL_USER=.*/MYSQL_USER=docker/g" $NEW_PATH/.env.example
+    
     cp .env.example .env
 
-    sed -i "s/MYSQL_USER=.*/MYSQL_USER=docker/g" $NEW_PATH/.env.example
     sed -i "s/MYSQL_PASSWORD=.*/MYSQL_PASSWORD=$PASSWORD/g" $NEW_PATH/.env
     sed -i "s/MYSQL_ROOT_PASSWORD=.*/MYSQL_ROOT_PASSWORD=$PASSWORD/g" $NEW_PATH/.env
 
