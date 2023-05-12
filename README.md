@@ -16,10 +16,17 @@ Para fazer o uso desse projeto você precisará ter em seu computador as seguint
 
 <br>
 
+## Referências
+- [API Ações Customizadas do Workflow](https://developers.hubspot.com/docs/api/automation/custom-workflow-actions)
+- [Artigo sobre os Public Apps](https://developers.hubspot.com/docs/api/creating-an-app)
+- [Swagger Docs](https://brikev.github.io/express-jsdoc-swagger-docs/#/)
+
+<br>
+
 ## Modo de usar
 ``` bash
 # Clone o repositório
-$ git clone git@ssh.dev.azure.com:v3/okndevelopers/
+$ git clone 
 
 # Entre no diretório raiz do projeto
 $ cd 

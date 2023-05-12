@@ -15,11 +15,10 @@ services:
     privileged: true
     tty: true
     stdin_open: true
-    # mem_limit: 3g
+    mem_limit: 3g
     entrypoint: ./entrypoint.sh
     env_file: ./.env
     ports:
       - ${DOCKER_APP_PORT}:${PORT}
     volumes:
       - ./code/:/var/www/html
-    network_mode: bridge

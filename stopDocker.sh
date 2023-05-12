@@ -15,7 +15,7 @@ function removeNodeModules() {
 }
 
 function removeDockerImage() {
-	docker rmi "$PROJECT_NAME/nodejs"
+	docker rmi "$PROJECT_NAME/nodejs:latest"
 }
 
 docker-compose down -v
