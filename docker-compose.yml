@@ -16,7 +16,7 @@ services:
     tty: true
     stdin_open: true
     mem_limit: 3g
-    entrypoint: ./entrypoint.sh
+    # entrypoint: ./entrypoint.sh
     env_file: ./.env
     ports:
       - ${DOCKER_APP_PORT}:${PORT}

@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
 sudo chmod a+rw -R .
-yarn
+
+# pnpm install
+# npm install
+# yarn
 
 /bin/bash
