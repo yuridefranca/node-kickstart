@@ -7,7 +7,7 @@ services:
       context: ./docker
       dockerfile: Dockerfile
       args:
-        - IMAGE_VERSION=1.0.0
+        - IMAGE_VERSION=1.1.0
         - NODE_VERSION=current
     image: ${PROJECT_NAME}/nodejs
     working_dir: /var/www/html
