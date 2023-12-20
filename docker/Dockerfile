@@ -1,4 +1,4 @@
-ARG IMAGE_VERSION=1.1.0
+ARG IMAGE_VERSION=2.0.0
 FROM yuridefranca/nodejs:${IMAGE_VERSION}
 
 COPY ./entrypoint.sh /entrypoint.sh
