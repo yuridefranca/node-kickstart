@@ -91,7 +91,7 @@ setUpProject() {
 
     git add .
 
-    git commit -m ":tada: Initial Commit"
+    git commit -m "chore: :tada: setup project"
 
     git branch -m main
 
